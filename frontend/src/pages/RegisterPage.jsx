@@ -11,7 +11,7 @@ const RegisterPage = ({ setUserInfo }) => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    // State is now an object to hold field-specific errors
+    // State is an object to hold field-specific or general errors
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
 
@@ -19,7 +19,7 @@ const RegisterPage = ({ setUserInfo }) => {
 
     const submitHandler = async (e) => {
         e.preventDefault();
-        // Clear previous errors
+        // Clear previous errors before a new submission
         setErrors({});
 
         if (password !== confirmPassword) {
@@ -39,11 +39,17 @@ const RegisterPage = ({ setUserInfo }) => {
             localStorage.setItem('userInfo', JSON.stringify(data));
             navigate('/');
         } catch (err) {
-            // Set errors from the backend response, or a general error
-            if (err.response?.data?.errors) {
-                setErrors(err.response.data.errors);
+            // This robust block handles both specific and general errors from the backend
+            const responseData = err.response?.data;
+            if (responseData?.errors) {
+                // Handles specific field errors like { errors: { email: "..." } }
+                setErrors(responseData.errors);
+            } else if (responseData?.message) {
+                // Handles general error messages like { message: "..." }
+                setErrors({ general: responseData.message });
             } else {
-                setErrors({ general: err.response?.data?.message || 'An error occurred' });
+                // This is the final fallback for network errors etc.
+                setErrors({ general: 'An unknown error occurred. Please try again.' });
             }
         } finally {
             setLoading(false);
