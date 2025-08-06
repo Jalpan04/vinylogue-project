@@ -1,0 +1,56 @@
+/* /frontend/src/pages/AuthPage.css */
+
+.auth-container {
+    max-width: 500px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    border: 3px solid var(--border-color);
+    background-color: var(--surface-color); /* Updated for dark mode */
+}
+
+.auth-container h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* For general errors at the top of the form */
+.auth-error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 2px solid #D8000C;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: #000; /* Make error text black for readability on light red bg */
+}
+
+/* For specific errors below each input field */
+.field-error {
+    color: #ff4757; /* A bright red color */
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+
+.auth-container button {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.auth-redirect-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+}
+
+.auth-redirect-link a {
+    text-decoration: underline;
+    font-weight: bold;
+}

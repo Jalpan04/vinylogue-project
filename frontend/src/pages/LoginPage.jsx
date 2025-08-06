@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './AuthPage.css'; // Import the new CSS file
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
 
@@ -27,6 +28,7 @@ const LoginPage = ({ setUserInfo }) => {
             localStorage.setItem('userInfo', JSON.stringify(data));
             navigate('/');
         } catch (err) {
+            // Use the general error class for login errors
             setError(err.response?.data?.message || 'An error occurred');
         } finally {
             setLoading(false);
@@ -34,9 +36,9 @@ const LoginPage = ({ setUserInfo }) => {
     };
 
     return (
-        <div style={{ maxWidth: '500px', margin: '2rem auto' }}>
+        <div className="auth-container">
             <h1>Login</h1>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {error && <p className="auth-error">{error}</p>}
             <form onSubmit={submitHandler}>
                 <div className="form-group">
                     <label htmlFor="email">Email Address</label>
@@ -62,7 +64,7 @@ const LoginPage = ({ setUserInfo }) => {
                     {loading ? 'Logging In...' : 'Login'}
                 </button>
             </form>
-            <p style={{ marginTop: '1rem' }}>
+            <p className="auth-redirect-link">
                 New Customer? <Link to="/register">Register</Link>
             </p>
         </div>
