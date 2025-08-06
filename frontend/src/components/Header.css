@@ -33,3 +33,9 @@
     padding: 0.5rem 1rem;
     font-size: 1rem;
 }
+
+.logo-image {
+    height: 70px; /* Adjust this value to make your logo bigger or smaller */
+    width: auto;
+    display: block; /* Helps remove any extra space below the image */
+}

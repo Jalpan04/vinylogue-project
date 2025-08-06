@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import logoImage from '../assets/logo.png'; // 1. Import your logo image
 import './Header.css';
 
 const Header = ({ userInfo, setUserInfo }) => {
@@ -13,8 +14,9 @@ const Header = ({ userInfo, setUserInfo }) => {
 
     return (
         <header className="site-header">
-            <Link to="/" className="logo">
-                Vinylogue 💿
+            <Link to="/" className="logo-link">
+                {/* 2. Replace the text with an img tag */}
+                <img src={logoImage} alt="Vinylogue Logo" className="logo-image" />
             </Link>
             <nav>
                 {userInfo ? (
