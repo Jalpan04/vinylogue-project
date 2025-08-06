@@ -1,0 +1,25 @@
+.star-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.star {
+    font-size: 2.5rem;
+    color: var(--primary);
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+.star:hover {
+    transform: scale(1.2);
+}
+
+.rating-value {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    background: var(--surface-color);
+    padding: 0.25rem 0.75rem;
+    border: 2px solid var(--border-color);
+}
