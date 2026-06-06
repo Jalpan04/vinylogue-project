@@ -132,3 +132,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 If you want, I can also **center the logo at the top and make the screenshots appear side-by-side** so the README looks more like a polished landing page.
 Do you want me to style it that way?
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
