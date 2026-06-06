@@ -1,3 +1,5 @@
+![GitHub top language](https://img.shields.io/github/languages/top/Jalpan04/vinylogue-project) ![GitHub repo size](https://img.shields.io/github/repo-size/Jalpan04/vinylogue-project) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 
 ![Vinylogue Logo](vinylogue.png)
 
